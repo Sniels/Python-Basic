@@ -1,9 +1,9 @@
 import time
-s = input("Sec: ")
+s = input("Sec: ") #input veld sec
 s = int(s)
-m = input("Min:")
+m = input("Min:") #input veld min
 m = int(m)
-h = input("Hour:")
+h = input("Hour:")#input veld uur
 h = int(h) 
 
 while (s < 60): # als seconden kleiner is dan 60 runt hij de print en doet er elke keer 1 bij en de seconden timer wordt gereset
