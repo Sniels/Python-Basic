@@ -21,3 +21,4 @@ while (s < 60): # als seconden kleiner is dan 60 runt hij de print en doet er el
     
     elif(h == 24): #als h gelijk is aan 24 reset uren en begint hij helemaal opnieuw
         h = 0
+        
