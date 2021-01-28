@@ -1,24 +1,36 @@
 import time
-s = input("Sec: ") #input veld sec
-s = int(s)
-m = input("Min:") #input veld min
-m = int(m)
-h = input("Hour:")#input veld uur
-h = int(h) 
+sec = input("Sec: ")  # input veld sec
+sec = int(sec)
+mi = input("Min:")  # input veld min
+mi = int(mi)
+hour = input("Hour:")  # input veld uur
+hour = int(hour)
 
-while (s < 60): # als seconden kleiner is dan 60 runt hij de print en doet er elke keer 1 bij en de seconden timer wordt gereset
-    print ("H:"+str(h) +" "+ "Min:"+ str(m)+" "+ "Sec:" + str(s)) 
-    time.sleep(1)
-    s=s+1
-    if (s == 60): #als s gelijk is aan 60 komt er +1 bij bij de minuut
-        m=m+1
-        s = 0
 
-    elif(m == 60): #als de minuut gelijk is aan 60 dan komt er +1 uur bij
-        h=h+1
-        m = 0
-        s = 0
-    
-    elif(h == 24): #als h gelijk is aan 24 reset uren en begint hij helemaal opnieuw
-        h = 0
-        
+def timer(h, m, s):
+    sstr = str(s)
+    mstr = str(m)
+    hstr = str(h)
+
+    if h < 10:
+        hstr = "0" + hstr
+        mstr = str(m)
+    if m < 10:
+        mstr = "0" + mstr
+        sstr = str(s)
+    if s < 10:
+        sstr = "0" + sstr
+    tstr = hstr + ":" + mstr + ":" + sstr
+    print(tstr)
+    return
+
+
+while(True):
+    for h in range(hour, 24):
+        hour = 0
+        for m in range(mi, 60):
+            mi = 0
+            for s in range(sec, 60):
+                sec = 0
+                time.sleep(0.001)
+                timer(h, m, s)
